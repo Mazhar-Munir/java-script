@@ -1,17 +1,22 @@
- /* div{
-    height: 100px;
-    width: 100px;
-    background-color: aqua;
-    color: black;
-    border: 2px solid black;
- } */
+/* Basic CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
- .dark{
-background-color: black;
-color: white;
- }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
 
- .light{
-    background-color: white;
-    color: black;
- }
+h1 {
+  color: #333;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
