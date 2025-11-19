@@ -27,31 +27,31 @@
 // });
 // });
 
+// 000);
+//      });
+//  }
 
- function getData(dataid, getNewData) {
-  return new Promise ((resolve, reject) =>{
-     setTimeout(() =>{ 
-    console.log("data" ,dataid);
-    resolve("success");
-   if(getNewData){
-    getNewData();
-   }
-    },2000);
-     });
- }
+// //  Promise chain
 
-//  Promise chain
+// getData(1).then((res) => {
+//    return getData(2);
+// })
+// .then((res) =>{
+//     return getData(3);
+// })
+// .then((res) =>{
+//     console.log(res);
+// });
 
-getData(1).then((res) => {
-   return getData(2);
-})
-.then((res) =>{
-    return getData(3);
-})
-.then((res) =>{
-    console.log(res);
-});
-
+//  function getData(dataid, getNewData) {
+//   return new Promise ((resolve, reject) =>{
+//      setTimeout(() =>{ 
+//     console.log("data" ,dataid);
+//     resolve("success");
+//    if(getNewData){
+//     getNewData();
+//    }
+//     },2
 // //  Callack Hell
 
 //  getData(1, () =>{
@@ -71,3 +71,45 @@ getData(1).then((res) => {
 //    console.log("I am a promis:");
 //    reject("some error occurred")
 // });
+
+// Async await 
+
+function getData(dataid) {
+  return new Promise ((resolve, reject) =>{
+     setTimeout(() =>{ 
+    console.log("data" ,dataid);
+    resolve("success");
+   }, 2000);
+    });
+}
+// function api() {
+//     return new Promise((reslove, reject)=>{
+//         setTimeout(()=>{
+//             console.log("Weather data");
+//             resolve ("sccuss");
+//         },2000);
+
+//     });
+// }
+// async function getWeatherData() {
+//     await api();
+// }
+
+async function getAllData(){
+    console.log("getting data 1......");
+    await getData(1);
+     console.log("getting data 2......");
+     await getData(2);
+      console.log("getting data 3......");
+      await getData(3);
+}
+
+// IIFE
+(async function (){
+    console.log("getting data 1......");
+    await getData(1);
+     console.log("getting data 2......");
+     await getData(2);
+      console.log("getting data 3......");
+      await getData(3);
+})();
